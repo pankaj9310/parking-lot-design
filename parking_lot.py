@@ -121,11 +121,11 @@ class ParkingLot:
             vehicle = self.parking_history[ticket_number]
             vehicle_details = {
                 "Vehicle Number": vehicle.vehicle_number,
-                "Vehicle Type": vehicle.vehicle_type,
-                "Vehicle parking spot type": vehicle.parking_spot_type,
-                "Vehicle parking time": vehicle.parking_time,
+                "Vehicle Type": vehicle.vehicle_type.name,
+                "Vehicle parking spot type": vehicle.parking_spot_type.name,
+                "Vehicle parking time": vehicle.parking_time.strftime("%d-%m-%Y, %H:%M:%S"),
                 "Vehicle parking charges": vehicle.parking_cost,
-                "vehicle ticket status": vehicle.ticket_status,
+                "vehicle ticket status": vehicle.ticket_status.name,
             }
             return vehicle_details
         return 'Invalid ticket number.'

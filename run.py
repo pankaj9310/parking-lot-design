@@ -1,14 +1,14 @@
 from parking_lot import ParkingLot
 from vehicle import Car, Truck, Motorcycle, Van
 
-print("Enter parking lot operator name.")
-name = input()
+name = input("Enter parking lot operator name: ")
 parking_lot = ParkingLot(name)
 while True:
-    choice = input("Enter 1 for vehicle Entry Gate.\n"
-                   "2 for parking exit Gate.\n"
-                   "3 to check parking status.\n"
-                   "4 to check vehicle status.\n")
+    choice = input("Enter Parking choice.\n"
+                   "1 Parking entry Gate.\n"
+                   "2 Parking exit Gate.\n"
+                   "3 Check parking status.\n"
+                   "4 Check vehicle status.\n")
     try:
         choice = int(choice)
     except ValueError:
@@ -16,10 +16,10 @@ while True:
     else:
         if choice == 1:
             vehicle_type = input("Enter vehicle type. \n"
-                                 "1 for Car.\n"
-                                 "2 for Motorcycle, \n"
-                                 "3 for Truck.\n"
-                                 "4 for Van\n")
+                                 "1 Car.\n"
+                                 "2 Motorcycle, \n"
+                                 "3 Truck.\n"
+                                 "4 Van\n")
             try:
                 vehicle_type = int(vehicle_type)
             except ValueError:
@@ -28,7 +28,7 @@ while True:
                 if vehicle_type < 0 or vehicle_type > 4:
                     print('Invalid vehicle type.')
                 else:
-                    vehicle_number = input("Enter vehicle Number.")
+                    vehicle_number = input("Enter vehicle Number: ")
                     if vehicle_type == 1:
                         vehicle = Car(vehicle_number)
                     elif vehicle_type == 2:
